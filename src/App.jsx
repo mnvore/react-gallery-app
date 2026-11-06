@@ -27,8 +27,7 @@ import apiKey from './config.js'
    )
  }
 
- // I am creating a Search component so users can search for photos
- // The form includes an input for typing and a button for submitting
+ // I am creating a Search component so users can search for photos The form includes an input for typing and a button for submitting
  // I will connect the search functionality when I work with the Pixabay API
 
  function Search({ fetchPhotos }) {
@@ -70,10 +69,10 @@ navigate(`/search/${encodeURIComponent(searchTerm)}`)
       const response = await fetch(
   `https://pixabay.com/api/?key=${apiKey}&q=${encodeURIComponent(query)}&image_type=photo`
 )
-        if (!response.ok) {
-          throw new Error('Unable to fetch photos') }
+if (!response.ok) {
+throw new Error('Unable to fetch photos') }
     
-      const data = await response.json()
+const data = await response.json()
       setPhotos(data.hits)
     }
       catch (error) {
